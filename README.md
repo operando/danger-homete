@@ -1,7 +1,5 @@
 # danger-homete
 
-[![Gem](https://img.shields.io/gem/v/danger.svg?style=flat)](https://rubygems.org/gems/danger-homete)
-
 danger-homete.
 
 ![](./arts/homete.png)
