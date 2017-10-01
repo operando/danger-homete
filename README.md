@@ -1,20 +1,29 @@
 # danger-homete
 
-A description of danger-homete.
+danger-homete.
 
 ## Installation
 
-    $ gem install danger-homete
+### gem
+
+```
+$ gem install danger-homete
+```
+
+### Bundler
+
+Add the following line to your Gemfile and then run `bundle install`:
+
+```
+gem 'danger-homete'
+```
+
 
 ## Usage
 
-    Methods and attributes from this plugin are available in
-    your `Dangerfile` under the `homete` namespace.
+Just add this line to your `Dangerfile`:
 
-## Development
-
-1. Clone this repo
-2. Run `bundle install` to setup dependencies.
-3. Run `bundle exec rake spec` to run the tests.
-4. Use `bundle exec guard` to automatically have tests run as you make changes.
-5. Make your changes.
+```ruby
+homete.test_files = ["*spec.rb", "*Test.java"]
+homete.homete(["すごい！","えらい！","がんばった！"])
+```

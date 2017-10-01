@@ -1,33 +1,24 @@
 module Danger
-  # This is your plugin class. Any attributes or methods you expose here will
-  # be available from within your Dangerfile.
-  #
-  # To be published on the Danger plugins site, you will need to have
-  # the public interface documented. Danger uses [YARD](http://yardoc.org/)
-  # for generating documentation from your plugin source, and you can verify
-  # by running `danger plugins lint` or `bundle exec rake spec`.
-  #
-  # You should replace these comments with a public description of your library.
-  #
-  # @example Ensure people are well warned about merging on Mondays
-  #
-  #          my_plugin.warn_on_mondays
-  #
   # @see  Shinobu Okano/danger-homete
-  # @tags monday, weekends, time, rattata
+  # @tags homete
   #
   class DangerHomete < Plugin
-
-    # An attribute that you can read/write from your Dangerfile
+    # A globbed string or array of strings which should match the files that you want to test.
     #
-    # @return   [Array<String>]
-    attr_accessor :my_attribute
+    # @param    [String or [String]] value
+    # @return   [[String]]
+    attr_accessor :test_files
 
-    # A method that you can call from your Dangerfile
-    # @return   [Array<String>]
+    def test_files
+      [@test_files].flatten.compact
+    end
+
+    # If you change the test code, you will be praised.
     #
-    def warn_on_mondays
-      warn 'Trying to merge code on a Monday' if Date.today.wday == 1
+    # @param    [String or [String]] 	praises
+    # @return   [void]
+    def homete(messages = ["えらい！"])
+      test_files.each { |v| message [messages].flatten.compact.sample if git.modified_files.any? { |f| File.fnmatch(v, f) } }
     end
   end
 end

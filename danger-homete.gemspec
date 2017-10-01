@@ -8,10 +8,10 @@ Gem::Specification.new do |spec|
   spec.version       = Homete::VERSION
   spec.authors       = ['Shinobu Okano']
   spec.email         = ['okanoshinobu8@gmail.com']
-  spec.description   = %q{A short description of danger-homete.}
-  spec.summary       = %q{A longer description of danger-homete.}
-  spec.homepage      = 'https://github.com/Shinobu Okano/danger-homete'
-  spec.license       = 'MIT'
+  spec.description   = %q{danger-homete.}
+  spec.summary       = %q{danger-homete.}
+  spec.homepage      = 'https://github.com/operando/danger-homete'
+  spec.license       = 'Apache License'
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
